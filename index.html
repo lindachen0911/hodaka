@@ -3,882 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python 學習路線圖 - 啟動您的編程之旅</title>
-    <!-- Tailwind CSS CDN -->
+    <title>穗高需求分析與解決方案</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom font - Inter */
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; /* 白色背景 */
+            color: #000000; /* 內文黑色 */
         }
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Navbar shadow for better visual separation */
-        .navbar {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        /* Hero section background gradient */
-        .hero-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        /* Stage section specific styling */
-        .stage-section {
-            background-color: white;
-            padding: 2.5rem; /* p-10 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-            margin-bottom: 2rem; /* mb-8 */
-        }
-        /* Link styling within resource blocks */
-        .resource-link {
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-            text-decoration: none; /* Ensure no default underline */
-        }
-        .resource-link:hover {
-            color: #4c51bf; /* Darker indigo on hover */
-        }
-        .resource-link svg {
-            margin-right: 0.5rem;
-            color: #6366f1; /* Indigo-500 for icons */
-        }
-        /* Styling for resource boxes */
-        .resource-box {
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: #e0e7ff; /* Indigo-100 */
-            border-radius: 0.5rem;
-        }
-        .resource-box h4 {
-            font-weight: 600;
-            color: #4338ca; /* Indigo-700 */
-            margin-bottom: 0.5rem;
-        }
-        .resource-box ul {
-            list-style: none; /* Remove default list bullets */
-            padding-left: 0;
-        }
-
-        /* Styling for tracking tasks */
-        .tracking-task-box {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: #f0f9ff; /* Light blue */
-            border-left: 4px solid #3b82f6; /* Blue-500 border */
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .tracking-task-box h4 {
-            font-weight: 700;
-            color: #1e40af; /* Blue-900 */
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        .tracking-task-box h4 svg {
-            margin-right: 0.5rem;
-            color: #3b82f6; /* Blue-500 */
-        }
-        .tracking-task-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .tracking-task-item:last-child {
-            margin-bottom: 0;
-        }
-        .tracking-task-item input[type="checkbox"] {
-            margin-right: 0.75rem;
-            width: 1.25rem;
-            height: 1.25rem;
-            accent-color: #2563eb; /* Blue-600 */
-        }
-        .tracking-task-item label {
-            color: #374151; /* Gray-700 */
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        .tracking-task-item input[type="checkbox"]:checked + label {
-            text-decoration: line-through;
-            color: #6b7280; /* Gray-500 */
-        }
-        .code-example {
-            background-color: #2d3748; /* Dark gray for code background */
-            color: #e2e8f0; /* Light text for code */
-            padding: 1rem;
-            border-radius: 0.5rem;
-            font-family: monospace;
-            overflow-x: auto;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+        h1, h2, h3 {
+            color: #1a237e; /* 深藍色標題 */
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- Navbar -->
-    <nav class="navbar bg-white p-4 sticky top-0 z-50 rounded-b-lg">
-        <div class="container mx-auto flex flex-wrap justify-center md:justify-between items-center">
-            <h1 class="text-2xl font-bold text-indigo-700 mb-2 md:mb-0">
-                <a href="#" class="hover:text-indigo-800 transition duration-300">Python學習路線圖</a>
-            </h1>
-            <div class="flex flex-wrap gap-2 md:gap-4 text-sm font-medium">
-                <a href="#stage1" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第一階段</a>
-                <a href="#stage2" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第二階段</a>
-                <a href="#stage3" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第三階段</a>
-                <a href="#stage4" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第四階段</a>
-                <a href="#stage5" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第五階段</a>
-                <a href="#stage6" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-50">第六階段</a>
+<body class="p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <header class="mb-8 pb-4 border-b border-gray-200">
+            <!-- LOGO在左邊，標題在右邊 -->
+            <div class="flex items-center mb-4">
+                <img src="https://anselm.com.tw/wp-content/uploads/2023/08/logo-02.png" alt="Anselm Inc. Logo" class="h-16 w-auto mr-4 rounded-md object-contain">
+                <h1 class="text-4xl font-bold">穗高需求分析與解決方案</h1>
             </div>
-        </div>
-    </nav>
+            <!-- 導覽連結，字體縮小置中於畫面 -->
+            <nav class="text-center text-sm space-x-4 mt-4">
+                <a href="#customer-needs" class="text-blue-700 hover:underline">客戶核心需求</a>
+                <a href="#recommended-modules" class="text-blue-700 hover:underline">推薦 Teamcenter 模組與解決方案</a>
+                <a href="#implementation-process" class="text-blue-700 hover:underline">導入流程建議</a>
+                <a href="#expected-benefits" class="text-blue-700 hover:underline">預期效益</a>
+            </nav>
+        </header>
 
-    <!-- Hero Section -->
-    <header class="hero-bg text-white py-16 md:py-24 text-center rounded-b-xl mb-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in-down">
-                從零開始，掌握 Python 的全面路徑！
-            </h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90 animate-fade-in-up">
-                這份精心設計的學習路線圖，將引導您從Python基礎到物件導向程式設計，每一步都提供精選的免費課程與影片資源。
-            </p>
-            <a href="#stage1" class="inline-block bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-100 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
-                立即開始您的旅程
-            </a>
-        </div>
-    </header>
+        <section id="customer-needs" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">客戶核心需求</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li>產品文件與料號關聯 ：建立SOP、圖面與產品料號的串聯關係</li>
+                <li>文件集中管理 ：整合分散在Document Center、MES等多系統的文件</li>
+                <li>文件版本控管與變更影響分析 ：文件異動時自動分析影響範圍</li>
+                <li>與MES系統整合 ：製令可直接帶入相關文件供現場作業員查閱</li>
+            </ul>
+        </section>
 
-    <!-- Main Content Area -->
-    <main class="container mx-auto px-4 md:px-8">
-
-        <!-- Stage 1: Python Basics -->
-        <section id="stage1" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第一階段：Python基礎 (4-6週)</h2>
-            <p class="text-gray-700 text-lg mb-6">本階段將為您建立紮實的Python程式設計基礎，了解環境設置、變數、基本運算與輸入輸出。</p>
-            
-            <div class="space-y-6">
-                <!-- Topic 1: Environment Setup & Basic Concepts -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">1. 環境設置與基本概念</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>Python安裝與IDE選擇（推薦VS Code或PyCharm）</li>
-                        <li>Python直譯器使用</li>
-                        <li>第一個Python程式：Hello World</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 入門與環境搭建 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=lvH4-4iYjgs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-circle"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                                    【 Python 】 給初學者的 Python 6 小時教學 (YouTube)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/playlist?list=PL91gvBcdjUtaBRJTeCK-iVKspBvqcESlJ" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    2小時零基礎速成Python免費入門課程系列 (YouTube 播放清單)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 2: Variables & Data Types -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">2. 變數與資料型態</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>變數命名規則</li>
-                        <li>基本資料型態：整數（int）、浮點數（float）、字串（string）、布林值（boolean）</li>
-                        <li>型態轉換</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 資料型別和變數 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/playlist?list=PL91gvBcdjUtaBRJTeCK-iVKspBvqcESlJ" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    2小時零基礎速成Python免費入門課程系列 (YouTube 播放清單)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 3: Operators & Expressions -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">3. 運算符與表達式</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>算術運算符（+, -, *, /, //, %, **）</li>
-                        <li>比較運算符（==, !=, &lt;, &gt;, &lt;=, &gt;=）</li>
-                        <li>邏輯運算符（and, or, not）</li>
-                        <li>賦值運算符</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 運算符 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=Ob_LKCLxg2o" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-circle"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                                    python】4天初學者Python教學 (YouTube)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 4: Input & Output -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">4. 輸入與輸出</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>print()函數的進階用法</li>
-                        <li>input()函數與型態轉換</li>
-                        <li>格式化字串（f-string）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.youtube.com/playlist?list=PL91gvBcdjUtaBRJTeCK-iVKspBvqcESlJ" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    2小時零基礎速成Python免費入門課程系列 (YouTube 播放清單)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <section id="recommended-modules" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">推薦 Teamcenter 模組與解決方案</h2>
+            <h3 class="text-xl font-semibold mb-2">核心模組組合</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">模組名稱</th>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">解決需求</th>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">理由說明</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Teamcenter Foundation</td>
+                            <td class="py-3 px-4 whitespace-nowrap">文件與料號關聯、集中管理</td>
+                            <td class="py-3 px-4">提供基礎PLM平台，支援Item、Document、BOM結構管理</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Product Structure Editor</td>
+                            <td class="py-3 px-4 whitespace-nowrap">BOM與文件串聯</td>
+                            <td class="py-3 px-4">管理產品結構，將SOP、圖面與料號建立階層關聯</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Change Management</td>
+                            <td class="py-3 px-4 whitespace-nowrap">文件變更影響分析</td>
+                            <td class="py-3 px-4">自動追蹤文件異動影響，支援ECR/ECO/ECN流程</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Electronic Work Instructions Advanced</td>
+                            <td class="py-3 px-4 whitespace-nowrap">製令帶入文件供現場查閱</td>
+                            <td class="py-3 px-4">創建可視化線上作業指導書，與MES整合自動發放到工站</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Teamcenter Manufacturing 3DPDF Documentation</td>
+                            <td class="py-3 px-4 whitespace-nowrap">3D可視化作業指導</td>
+                            <td class="py-3 px-4">將3D模型與工藝文件轉換為可攜式3D PDF，現場查閱</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Teamcenter Gateway for ERP</td>
+                            <td class="py-3 px-4 whitespace-nowrap">ERP/MES系統整合</td>
+                            <td class="py-3 px-4">與EBS等ERP系統雙向串接，製令自動帶入文件資訊</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Tracking Tasks for Stage 1 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第一階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task1-1">
-                        <label for="task1-1">安裝Python環境並成功執行 "Hello World"</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task1-2">
-                        <label for="task1-2">理解並能區分不同的基本資料型態</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task1-3">
-                        <label for="task1-3">熟練使用各種運算符進行表達式運算</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task1-4">
-                        <label for="task1-4">能使用 input() 和 print() 進行基本輸入輸出</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task1-5">
-                        <label for="task1-5">
-                            完成以下三個練習題：
-                            <ul class="list-disc list-inside ml-4 mt-2">
-                                <li>**練習題1：計算BMI**：編寫一個程式，讓使用者輸入身高（公尺）和體重（公斤），然後計算並輸出他們的身體質量指數 (BMI)。公式為：$BMI = 體重 / (身高^2)$。</li>
-                                <li>**練習題2：溫度轉換器**：編寫一個程式，讓使用者輸入攝氏溫度，然後將其轉換為華氏溫度並輸出。公式為：$華氏溫度 = 攝氏溫度 * 1.8 + 32$。</li>
-                                <li>**練習題3：簡單的購物清單**：編寫一個程式，讓使用者輸入3-5件想購買的物品，然後將這些物品列印出來作為購物清單。</li>
-                            </ul>
-                        </label>
-                    </div>
-                </div>
+            <h3 class="text-xl font-semibold mt-6 mb-2">輔助模組</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">模組名稱</th>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">附加價值</th>
+                            <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 uppercase tracking-wider">說明</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Classification</td>
+                            <td class="py-3 px-4 whitespace-nowrap">文件分類管理</td>
+                            <td class="py-3 px-4">依據產品類型、工序等進行文件標準化分類</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 whitespace-nowrap">Workflow</td>
+                            <td class="py-3 px-4 whitespace-nowrap">文件審核流程</td>
+                            <td class="py-3 px-4">自動化文件發佈、變更審核等流程</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <!-- Stage 2: Control Flow -->
-        <section id="stage2" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第二階段：控制流程 (2-3週)</h2>
-            <p class="text-gray-700 text-lg mb-6">掌握如何控制程式的執行順序，讓您的程式能夠根據條件做出決策或重複執行任務。</p>
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">模組功能說明與優缺點</h2>
 
-            <div class="space-y-6">
-                <!-- Topic 5: Conditional Statements -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">5. 條件判斷</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>if, elif, else語句</li>
-                        <li>巢狀條件判斷</li>
-                        <li>條件表達式（三元運算符）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 條件判斷 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/playlist?list=PL91gvBcdjUtaBRJTeCK-iVKspBvqcESlJ" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    2小時零基礎速成Python免費入門課程系列 (YouTube 播放清單)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 6: Loop Structures -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">6. 迴圈結構</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>for迴圈與range()函數</li>
-                        <li>while迴圈</li>
-                        <li>break和continue語句</li>
-                        <li>巢狀迴圈</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 迴圈 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/playlist?list=PL91gvBcdjUtaBRJTeCK-iVKspBvqcESlJ" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    2小時零基礎速成Python免費入門課程系列 (YouTube 播放清單)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">1. Teamcenter Foundation + Product Structure Editor</h3>
+                <h4 class="text-lg font-medium mb-1">功能說明：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>建立產品結構樹，將SOP、作業指導書、圖面等文件與特定料號關聯</li>
+                    <li>支援多層級BOM結構，可在零件、組件、產品各層級附加對應文件</li>
+                    <li>提供統一的文件儲存與檢索平台</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">優點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>文件與產品結構完整串聯，資料一致性高</li>
+                    <li>支援多種文件格式（PDF、Word、Excel、CAD圖檔等）</li>
+                    <li>版本自動控管，歷史紀錄完整可追溯</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">缺點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>需要重新建立產品結構與文件關聯，初期建檔工作量大</li>
+                    <li>使用者需要學習新的操作介面與流程</li>
+                </ul>
             </div>
 
-            <!-- Tracking Tasks for Stage 2 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第二階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task2-1">
-                        <label for="task2-1">能運用 if/elif/else 語句處理多種條件判斷</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task2-2">
-                        <label for="task2-2">理解 for 迴圈和 while 迴圈的區別與應用場景</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task2-3">
-                        <label for="task2-3">能使用 break 和 continue 控制迴圈流程</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task2-4">
-                        <label for="task2-4">
-                            完成以下三個程式練習：
-                            <ul class="list-disc list-inside ml-4 mt-2">
-                                <li>**練習題1：判斷閏年**：編寫一個程式，判斷使用者輸入的年份是否為閏年。閏年的條件是：能被4整除但不能被100整除，或者能被400整除。</li>
-                                <li>**練習題2：九九乘法表**：使用巢狀迴圈列印出完整的九九乘法表。</li>
-                                <li>**練習題3：猜數字遊戲**：編寫一個猜數字遊戲。程式隨機生成一個1到100的數字，然後讓使用者猜測。根據使用者的猜測給予提示（例如「太高了」或「太低了」），直到猜對為止，並顯示猜測次數。</li>
-                            </ul>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stage 3: Data Structures -->
-        <section id="stage3" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第三階段：資料結構 (3-4週)</h2>
-            <p class="text-gray-700 text-lg mb-6">深入了解Python中常用的資料結構，包括列表、元組、字典和集合，這是處理數據的基石。</p>
-
-            <div class="space-y-6">
-                <!-- Topic 7: Sequence Types -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">7. 序列型態</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>列表（List）：建立、存取、修改、方法</li>
-                        <li>元組（Tuple）：不可變序列的特性</li>
-                        <li>字串（String）：切片、方法、格式化</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - List和Tuple (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=lvH4-4iYjgs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-circle"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                                    【 Python 】 給初學者的 Python 6 小時教學 (YouTube，含資料結構介紹)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 8: Mapping Types -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">8. 映射型態</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>字典（Dictionary）：鍵值對操作</li>
-                        <li>字典方法與遍歷</li>
-                        <li>字典推導式</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 字典 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=_Cc-dMVD2vs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    【2024最新免费】4個項目學會Python (YouTube，應含字典教學)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 9: Set Types -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">9. 集合型態</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>集合（Set）：唯一元素集合</li>
-                        <li>集合運算（聯集、交集、差集）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 集合 (綜合頁面)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">2. Change Management</h3>
+                <h4 class="text-lg font-medium mb-1">功能說明：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>提供ECR（變更需求）、ECO（變更執行）、ECN（變更通知）完整流程</li>
+                    <li>自動分析文件變更對相關物件的影響範圍（Impact Analysis）</li>
+                    <li>支援多層級簽核與通知機制</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">優點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>解決客戶「文件變更影響分析」的核心需求</li>
+                    <li>符合CMMI標準，流程嚴謹且可稽核</li>
+                    <li>自動通知受影響的相關單位與人員</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">缺點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>需要建立完整的變更流程與權限設定</li>
+                    <li>使用者需要培訓變更管理流程操作</li>
+                </ul>
             </div>
 
-            <!-- Tracking Tasks for Stage 3 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第三階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task3-1">
-                        <label for="task3-1">能獨立建立、存取和修改列表、元組、字串</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task3-2">
-                        <label for="task3-2">理解字典的鍵值對概念並能進行基本操作</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task3-3">
-                        <label for="task3-3">掌握集合的特性並能執行集合運算</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task3-4">
-                        <label for="task3-4">
-                            完成以下兩個綜合使用多種資料結構的程式練習：
-                            <ul class="list-disc list-inside ml-4 mt-2">
-                                <li>**練習題1：字數統計器**：編寫一個程式，讀取一段文字（可以是一個字串變數），統計其中每個單詞出現的次數，並將結果以字典形式輸出。忽略大小寫和標點符號。</li>
-                                <li>**練習題2：學生分數管理**：使用字典和列表來儲存多位學生的姓名和他們各科分數。編寫程式計算每個學生的平均分數，並找出總分最高的學生。</li>
-                            </ul>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stage 4: Functions & Modules -->
-        <section id="stage4" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第四階段：函數與模組 (2-3週)</h2>
-            <p class="text-gray-700 text-lg mb-6">學習如何組織程式碼，使用函數來提高程式碼的重用性，並透過模組和套件管理大型專案。</p>
-
-            <div class="space-y-6">
-                <!-- Topic 10: Function Definition & Usage -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">10. 函數定義與使用</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>函數定義（def關鍵字）</li>
-                        <li>參數傳遞（位置參數、關鍵字參數）</li>
-                        <li>預設參數值</li>
-                        <li>可變參數（*args, **kwargs）</li>
-                        <li>函數回傳值</li>
-                        <li>區域變數與全域變數</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 函數 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=_Cc-dMVD2vs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    【2024最新免费】4個項目學會Python (YouTube，應含函數教學)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 11: Modules & Packages -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">11. 模組與套件</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>import語句的使用</li>
-                        <li>標準函式庫介紹</li>
-                        <li>第三方套件安裝（pip）</li>
-                        <li>建立自己的模組</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 模組 (綜合頁面)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">Electronic Work Instructions Advanced</h3>
+                <h4 class="text-lg font-medium mt-3 mb-1">優點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>支援3D模型結合文字說明與標註</li>
+                    <li>可依據工站自動分發對應指導書</li>
+                    <li>與MES無縫整合，製令自動觸發文件推送</li>
+                    <li>支援客製化訂單的指導書自動配置</li>
+                    <li>線上即時更新，無需重新印製紙本</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">缺點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>需要工站配置顯示終端設備</li>
+                    <li>初期需投入人力將紙本指導書數位化</li>
+                </ul>
             </div>
 
-            <!-- Tracking Tasks for Stage 4 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第四階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task4-1">
-                        <label for="task4-1">能獨立定義和使用函數，包括不同類型的參數</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task4-2">
-                        <label for="task4-2">理解模組和套件的概念，並能導入和使用</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task4-3">
-                        <label for="task4-3">學會使用 pip 安裝第三方套件</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task4-4">
-                        <label for="task4-4">
-                            完成以下兩個包含多個函數和模組的程式練習：
-                            <ul class="list-disc list-inside ml-4 mt-2">
-                                <li>**練習題1：簡易計算機**：編寫一個計算機程式，包含加、減、乘、除四個基本運算。每個運算都應由一個獨立的函數實現。主程式應提供一個循環菜單，讓使用者選擇運算並輸入數字，直到使用者選擇退出。</li>
-                                <li>**練習題2：密碼生成器**：編寫一個程式，能夠生成指定長度（例如12位）的隨機密碼。密碼應包含大小寫字母、數字和特殊符號。你可以將生成不同類型字符的邏輯封裝在不同的函數中，並組合起來生成最終密碼。</li>
-                            </ul>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stage 5: File Handling & Exception Handling -->
-        <section id="stage5" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第五階段：檔案處理與例外處理 (2週)</h2>
-            <p class="text-gray-700 text-lg mb-6">學習如何讀取和寫入檔案，以及如何優雅地處理程式執行中的錯誤，讓程式更加健壯。</p>
-
-            <div class="space-y-6">
-                <!-- Topic 12: File Operations -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">12. 檔案操作</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>檔案的開啟、讀取、寫入、關閉</li>
-                        <li>with語句的使用</li>
-                        <li>不同檔案格式處理（txt, csv）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 檔案I/O (綜合頁面)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 13: Exception Handling -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">13. 例外處理</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>try, except, else, finally語句</li>
-                        <li>常見例外類型</li>
-                        <li>自定義例外</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 錯誤、除錯、測試 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=_Cc-dMVD2vs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    【2024最新免费】4個項目學會Python (YouTube，應含錯誤處理)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tracking Tasks for Stage 5 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第五階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task5-1">
-                        <label for="task5-1">能讀寫不同格式的檔案（例如 .txt, .csv）</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task5-2">
-                        <label for="task5-2">理解並能使用 try-except 語句處理常見例外</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task5-3">
-                        <label for="task5-3">嘗試撰寫一個包含檔案操作和例外處理的程式</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task5-4">
-                        <label for="task5-4">
-                            學習如何自定義例外類型：
-                            <div class="code-example">
-                                <pre>
-# 定義一個自定義例外
-class InvalidInputError(Exception):
-    "當輸入無效時引發的例外"
-    def __init__(self, message="輸入無效"):
-        self.message = message
-        super().__init__(self.message)
-
-def process_number(num):
-    if not isinstance(num, (int, float)):
-        raise InvalidInputError("輸入必須是數字！")
-    if num < 0:
-        raise InvalidInputError("數字不能為負數！")
-    print(f"處理數字：{num}")
-
-# 使用自定義例外
-try:
-    process_number(10)
-    process_number(-5)
-except InvalidInputError as e:
-    print(f"發生錯誤：{e.message}")
-except Exception as e:
-    print(f"發生未預期的錯誤：{e}")
-
-try:
-    process_number("hello")
-except InvalidInputError as e:
-    print(f"發生錯誤：{e.message}")
-                                </pre>
-                            </div>
-                            這個範例展示了如何創建一個名為 `InvalidInputError` 的自定義例外類別，並在函數中根據條件觸發這個例外。
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stage 6: Object-Oriented Programming (OOP) -->
-        <section id="stage6" class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">第六階段：物件導向程式設計 (3-4週)</h2>
-            <p class="text-gray-700 text-lg mb-6">掌握物件導向的核心概念，包括類別、物件、封裝、繼承和多型，這是進階程式設計的關鍵。</p>
-
-            <div class="space-y-6">
-                <!-- Topic 14: Classes & Objects -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">14. 類別與物件</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>類別定義（class關鍵字）</li>
-                        <li>物件建立與使用</li>
-                        <li>屬性與方法</li>
-                        <li>建構子（__init__）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 面向對象程式設計 (綜合頁面)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=_Cc-dMVD2vs" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                                    【2024最新免费】4個項目學會Python (YouTube，含OOP介紹)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Topic 15: OOP Characteristics -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">15. 物件導向特性</h3>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li>封裝（Encapsulation）</li>
-                        <li>繼承（Inheritance）</li>
-                        <li>多型（Polymorphism）</li>
-                    </ul>
-                    <div class="resource-box">
-                        <h4 class="text-lg">推薦學習資源</h4>
-                        <ul>
-                            <li>
-                                <a href="https://www.liaoxuefeng.com/wiki/1016959c5332f80c_1016959c5332f80c_1016959c5332f80c.html" target="_blank" class="resource-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M12 7h4"/><path d="M12 11h4"/><path d="M12 15h4"/></svg>
-                                    廖雪峰Python教程 - 繼承和多型 (綜合頁面)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tracking Tasks for Stage 6 -->
-            <div class="tracking-task-box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                    學習追蹤任務 - 第六階段
-                </h4>
-                <div class="space-y-2">
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task6-1">
-                        <label for="task6-1">能獨立設計並實現簡單的類別與物件</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task6-2">
-                        <label for="task6-2">理解並能在程式中應用封裝、繼承和多型</label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task6-3">
-                        <label for="task6-3">
-                            完成以下至少 1 個小型物件導向專案：
-                            <ul class="list-disc list-inside ml-4 mt-2">
-                                <li>**專案1：簡單的銀行帳戶系統**：
-                                    <ul>
-                                        <li>創建一個 `Account` 類別，包含 `account_number`（帳號）、`balance`（餘額）和 `owner`（所有者）等屬性。</li>
-                                        <li>實現 `deposit`（存款）、`withdraw`（提款）和 `get_balance`（獲取餘額）等方法。</li>
-                                        <li>處理提款時餘額不足的例外情況。</li>
-                                        <li>可以進一步擴展，創建 `SavingsAccount`（儲蓄帳戶）或 `CheckingAccount`（支票帳戶）等子類別，實現繼承。</li>
-                                    </ul>
-                                </li>
-                                <li>**專案2：圖書管理系統**：
-                                    <ul>
-                                        <li>創建 `Book` 類別，包含 `title`（書名）、`author`（作者）、`isbn`（ISBN碼）和 `is_borrowed`（是否被借出）等屬性。</li>
-                                        <li>創建 `Library` 類別，用於管理多本書籍（使用列表或字典儲存）。</li>
-                                        <li>實現 `add_book`（新增書籍）、`borrow_book`（借書）、`return_book`（還書）和 `list_books`（列出所有書籍）等方法。</li>
-                                        <li>確保借書和還書時的邏輯正確性。</li>
-                                    </ul>
-                                </li>
-                                <li>**專案3：簡易RPS遊戲 (剪刀石頭布)**：
-                                    <ul>
-                                        <li>創建一個 `Player` 類別，包含玩家名稱和選擇（剪刀/石頭/布）的屬性。</li>
-                                        <li>創建一個 `Game` 類別，包含遊戲邏輯，例如判斷勝負的方法。</li>
-                                        <li>讓電腦玩家隨機選擇。</li>
-                                        <li>實現玩家和電腦之間的對戰循環，直到玩家選擇退出。</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </label>
-                    </div>
-                    <div class="tracking-task-item">
-                        <input type="checkbox" id="task6-4">
-                        <label for="task6-4">能解釋物件導向程式設計的主要優勢</label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Supplementary Resources Section -->
-        <section class="stage-section">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6">補充學習資源</h2>
-            <p class="text-gray-700 text-lg mb-6">以下是額外推薦的學習資源，幫助您更廣泛地探索Python的世界。</p>
-            <div class="resource-box">
-                <h4 class="text-lg">更多學習資源推薦</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=2CMNvo1zQeQ" target="_blank" class="resource-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 21h18.4a.8.8 0 0 0 .8-.8V3.8a.8.8 0 0 0-.8-.8H2.8a.8.8 0 0 0-.8.8v16.4a.8.8 0 0 0 .8.8Z"/><path d="m10 15 5-3-5-3z"/></svg>
-                            如何入門 Python 程式語言？推薦國內外優質的線上學習資源與書籍 (YouTube)
-                        </a>
-                    </li>
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">Teamcenter Gateway for ERP</h3>
+                <h4 class="text-lg font-medium mb-1">功能說明：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>與Oracle EBS、SAP等ERP系統雙向整合</li>
+                    <li>可將Teamcenter中的文件資訊同步到ERP製令</li>
+                    <li>支援即時資料交換與狀態同步</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">優點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>避免重複建檔，資料同步自動化</li>
+                    <li>現場作業員可直接從ERP系統點閱PLM文件</li>
+                </ul>
+                <h4 class="text-lg font-medium mt-3 mb-1">缺點：</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>需要ERP系統配合進行客製化開發</li>
+                    <li>整合複雜度較高，需要專業技術支援</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Conclusion -->
-        <section class="bg-white p-6 rounded-lg shadow-md mt-8 text-center">
-            <h2 class="text-2xl font-bold text-indigo-700 mb-4">開始您的Python學習之旅吧！</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                完成這些階段的學習後，您將對Python程式設計有紮實的理解。繼續實踐和探索，祝您在程式設計的道路上取得成功！
-            </p>
-            <p class="text-base text-gray-600 mt-4">
-                編程之路永無止境，保持好奇心，不斷學習！
-            </p>
+        <section id="implementation-process" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">導入流程建議</h2>
+
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">階段一：基礎平台建置（2-3個月）</h3>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Teamcenter Foundation 安裝與設定</li>
+                    <li>系統架構規劃與硬體建置</li>
+                    <li>使用者權限與角色設定</li>
+                    <li>文件分類架構設計</li>
+                    <li>資料移轉與建檔</li>
+                    <li>現有文件從Document Center等系統移轉至Teamcenter</li>
+                    <li>建立產品結構與料號關聯</li>
+                    <li>文件屬性標準化設定</li>
+                </ul>
+            </div>
+
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">階段二：變更管理導入（1-2個月）</h3>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Change Management 流程設計</li>
+                    <li>變更流程（ECR/ECO/ECN）客製化</li>
+                    <li>簽核權限與通知機制設定</li>
+                    <li>Impact Analysis 規則配置</li>
+                    <li>使用者教育訓練</li>
+                    <li>文件建檔與管理訓練</li>
+                    <li>變更流程操作訓練</li>
+                    <li>系統操作手冊編寫</li>
+                </ul>
+            </div>
+
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">階段三：MES製造執行整合（2-3個月）</h3>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Electronic Work Instructions 導入</li>
+                    <li>將現有SOP、作業指導書數位化</li>
+                    <li>建立可視化、3D化作業指導書</li>
+                    <li>設定工站與文件的對應關係</li>
+                    <li>MES整合設定</li>
+                    <li>與EBS/MES系統建立製令觸發機制</li>
+                    <li>設定料號與指導書的自動匹配規則</li>
+                    <li>配置工站終端顯示介面</li>
+                    <li>現場驗證與上線</li>
+                    <li>工站終端安裝與測試</li>
+                    <li>現場作業員操作訓練</li>
+                    <li>製令自動帶入文件功能驗證</li>
+                </ul>
+            </div>
+
+            <div class="mb-6 p-4 border border-gray-200 rounded-md shadow-sm">
+                <h3 class="text-xl font-semibold mb-2">階段四：ERP整合（2-3個月）</h3>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Teamcenter Gateway 設定</li>
+                    <li>與EBS系統連接設定</li>
+                    <li>資料映射與同步規則定義</li>
+                    <li>製令文件關聯機制開發</li>
+                    <li>測試與上線</li>
+                    <li>整合測試與效能調校</li>
+                    <li>使用者驗收測試（UAT）</li>
+                    <li>正式上線與後續支援</li>
+                </ul>
+            </div>
         </section>
 
-    </main>
+        <section id="expected-benefits" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">預期效益</h2>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-6 mt-12 rounded-t-lg">
-        <div class="container mx-auto">
-            <p>&copy; 2024 Python學習路線圖. 版權所有.</p>
-        </div>
-    </footer>
+            <h3 class="text-xl font-semibold mb-2">立即效益：</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>文件集中管理，減少跨系統查找時間</li>
+                <li>變更影響分析自動化，降低遺漏風險</li>
+                <li>製令自動帶入文件 ：現場作業員無需手動查找，提升作業效率50%</li>
+                <li>指導書即時更新 ：文件變更立即反映到現場，減少版本錯誤風險</li>
+                <li>3D可視化輔助 ：降低作業錯誤率，提升品質一致性</li>
+            </ul>
 
-    <!-- Lucide Icons script (for SVG icons) -->
-    <script>
-        // No specific JS needed for the icons as they are inline SVG now.
-        // If you were using a library that required parsing, it would go here.
-    </script>
+            <h3 class="text-xl font-semibold mt-6 mb-2">長期效益：</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>建立企業文件標準化管理流程，減少紙本印製與管理成本</li>
+                <li>作業標準化：確保所有工站使用最新版本指導書</li>
+                <li>數據追蹤：可記錄作業員查閱紀錄，支援後續分析與改善</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">投資回報：</h3>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>減少文件管理人力成本約30-40%</li>
+                <li>縮短變更處理時間約50%</li>
+                <li>降低因文件錯誤造成的品質風險</li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
